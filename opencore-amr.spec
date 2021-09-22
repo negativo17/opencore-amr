@@ -1,6 +1,6 @@
 Name:           opencore-amr
 Version:        0.1.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        OpenCORE Adaptive Multi Rate Narrowband and Wideband speech lib
 License:        ASL 2.0
 URL:            http://sourceforge.net/projects/opencore-amr/
@@ -9,6 +9,7 @@ Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.
 Patch0:         opencore-amr-0.1.3-fix_pc.patch
 
 BuildRequires:  gcc
+BuildRequires:  gcc-c++
 
 %description
 Library of OpenCORE Framework implementation of Adaptive Multi Rate Narrowband
@@ -51,6 +52,9 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/pkgconfig/opencore-amrwb.pc
 
 %changelog
+* Wed Sep 22 2021 Fabio Valentini <decathorpe@gmail.com> - 0.1.5-3
+- Add BR: gcc-c++ to appease autotools.
+
 * Thu Sep 20 2018 Simone Caronni <negativo17@gmail.com> - 0.1.5-2
 - Add GCC build requirement.
 
